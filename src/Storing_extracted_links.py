@@ -1,0 +1,23 @@
+from Login import login_linkedin
+from Job_links_scraper import Job_links
+import csv
+import os
+
+driver = login_linkedin()
+if driver:
+    links = Job_links(driver)
+
+    output_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
+    os.makedirs(output_dir, exist_ok=True)
+
+    output_path = os.path.join(output_dir, "recommended_jobs.csv")
+
+    with open(output_path, "w", newline='', encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["Job URL"])
+        for link in links:
+            writer.writerow([link])
+    
+    print("The file has been successfully Stored. ")
+    driver.quit()
+
