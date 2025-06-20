@@ -1,5 +1,6 @@
 from Login import login_linkedin
 from Job_links_scraper import Job_links
+from Job_details_extractor import extract_job_details
 import csv
 import os
 
@@ -19,5 +20,7 @@ if driver:
             writer.writerow([link])
     
     print("The file has been successfully Stored. ")
-    driver.quit()
+    # driver.quit()
+
+extract_job_details(driver)
 
