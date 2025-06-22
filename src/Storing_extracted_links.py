@@ -20,7 +20,8 @@ if driver:
             writer.writerow([link])
     
     print("The file has been successfully Stored. ")
-    # driver.quit()
 
 extract_job_details(driver)
+input("Press ENTER to stop the driver.")
+driver.quit()
 

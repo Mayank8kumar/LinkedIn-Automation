@@ -7,7 +7,7 @@ def Job_links(driver):
     """
 
     driver.get("https://www.linkedin.com/jobs/collections/recommended/")
-    time.sleep(1)
+    time.sleep(3)
     
     print(" Extracting job cards inside the container...")
  
@@ -21,4 +21,4 @@ def Job_links(driver):
             all_links.append(url)
     
     print(f"✅ Found {len(list(set(all_links)))} unique job links.")
-    return all_links
+    return list(set(all_links))

@@ -34,7 +34,7 @@ def login_linkedin():
     
     driver.get("https://www.linkedin.com/login")
 
-    wait = WebDriverWait(driver, 10)
+    wait = WebDriverWait(driver, 5)
 
     # Login in the account 
     email_field = wait.until(EC.presence_of_element_located((By.XPATH, '//input[@id="username"]')))
@@ -46,7 +46,7 @@ def login_linkedin():
     login_button = driver.find_element(By.XPATH, '//button[@type="submit"]')
     login_button.click()
 
-    time.sleep(13)  # Let the page load after login to handle security
+    # time.sleep(13)  # Let the page load after login to handle security
 
     if "feed" in driver.current_url:
         print("✅ Logged in to LinkedIn successfully.")
