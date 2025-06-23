@@ -3,6 +3,9 @@ from Job_links_scraper import Job_links
 from Job_details_extractor import extract_job_details
 import csv
 import os
+import time
+
+start_time = time.time()
 
 driver = login_linkedin()
 if driver:
@@ -22,6 +25,7 @@ if driver:
     print("The file has been successfully Stored. ")
 
 extract_job_details(driver)
+print("The total time takes", time.time() - start_time)
 input("Press ENTER to stop the driver.")
 driver.quit()
 

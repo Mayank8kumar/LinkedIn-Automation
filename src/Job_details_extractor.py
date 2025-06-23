@@ -36,7 +36,7 @@ def extract_job_details(driver):
         job_url = row['Job URL']
         print(f"\nOpening Job {index + 1}: {job_url}")
         driver.get(job_url)
-        time.sleep(5)  # Wait for page load
+        time.sleep(2)  # Wait for page load
 
         # Job profile extraction
         try:
