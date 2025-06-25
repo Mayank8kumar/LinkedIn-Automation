@@ -1,6 +1,7 @@
 from Login import login_linkedin
 from Job_links_scraper import Job_links
 from Job_details_extractor import extract_job_details
+from easy_apply import easy_apply
 import csv
 import os
 import time
@@ -25,6 +26,7 @@ if driver:
     print("The file has been successfully Stored. ")
 
 extract_job_details(driver)
+easy_apply(driver)
 print("The total time takes", time.time() - start_time)
 input("Press ENTER to stop the driver.")
 driver.quit()
