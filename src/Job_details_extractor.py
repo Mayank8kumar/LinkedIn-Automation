@@ -6,16 +6,6 @@ from selenium.webdriver.common.by import By
 # from Login import login_linkedin
 
 
-# def init_driver(headless=True):
-#     options = Options()
-#     if headless:
-#         options.add_argument("--headless")
-#     options.add_argument("--disable-gpu")
-#     options.add_argument("--log-level=3")
-#     options.add_argument("--force-device-scale-factor=0.5")
-#     return webdriver.Chrome(options=options)
-
-
 def extract_job_details(driver):
     # details = []
     # driver = login_linkedin()
